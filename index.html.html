@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Infra Associate | Roofing & Building Solutions</title>
+<meta name="description" content="Infra Associate - roofing, building blocks and construction solutions. View our work, customer reviews and enquire about products.">
+<style>
+  :root{
+    --cream:#f5ead2;
+    --paper:#fff8e8;
+    --brown:#3b281e;
+    --rust:#a84b2a;
+    --orange:#d77a32;
+    --olive:#657047;
+    --gold:#d6aa52;
+    --ink:#29231f;
+    --muted:#75695c;
+    --line:#cdbb9a;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    color:var(--ink);
+    background:
+      radial-gradient(circle at 20% 10%, rgba(168,75,42,.08), transparent 24%),
+      radial-gradient(circle at 80% 60%, rgba(101,112,71,.07), transparent 25%),
+      var(--cream);
+    font-family: Georgia, "Times New Roman", serif;
+  }
+  body:before{
+    content:"";
+    position:fixed; inset:0; pointer-events:none; z-index:10; opacity:.10;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.16'/%3E%3C/svg%3E");
+  }
+  a{color:inherit;text-decoration:none}
+  .container{width:min(1120px,92%);margin:auto}
+  .topbar{
+    background:var(--brown); color:var(--cream); padding:9px 0;
+    font-size:.82rem; letter-spacing:1.5px; text-align:center;
+  }
+  nav{
+    position:sticky; top:0; z-index:20;
+    background:rgba(245,234,210,.95);
+    border-bottom:2px solid var(--brown);
+    backdrop-filter:blur(8px);
+  }
+  .navin{display:flex;align-items:center;justify-content:space-between;padding:15px 0}
+  .brand{font-size:1.35rem;font-weight:bold;letter-spacing:2px;color:var(--brown)}
+  .brand span{color:var(--rust)}
+  .links{display:flex;gap:24px;font-size:.92rem;font-weight:bold}
+  .links a:hover{color:var(--rust)}
+  .hero{padding:75px 0 55px}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:45px;align-items:center}
+  .eyebrow{
+    display:inline-block;border:1px solid var(--rust);color:var(--rust);
+    padding:7px 12px;letter-spacing:2px;font-size:.72rem;text-transform:uppercase;
+    transform:rotate(-1deg);background:rgba(255,248,232,.6)
+  }
+  h1{font-size:clamp(3rem,7vw,6.3rem);line-height:.86;margin:20px 0;color:var(--brown);letter-spacing:-3px}
+  h1 em{font-style:normal;color:var(--rust)}
+  .hero p{font-size:1.12rem;line-height:1.7;max-width:600px;color:var(--muted)}
+  .buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+  .btn{
+    display:inline-block;padding:13px 19px;border:2px solid var(--brown);
+    font-weight:bold;letter-spacing:.5px;box-shadow:4px 4px 0 var(--brown);
+    background:var(--paper);cursor:pointer;transition:.15s;
+  }
+  .btn:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--brown)}
+  .btn.primary{background:var(--rust);color:white}
+  .hero-card{
+    background:var(--brown);color:var(--cream);padding:18px;box-shadow:12px 12px 0 var(--rust);
+    transform:rotate(1.3deg)
+  }
+  .hero-photo{
+    height:370px;display:flex;align-items:center;justify-content:center;text-align:center;
+    border:2px dashed rgba(245,234,210,.55);
+    background:linear-gradient(135deg,#695044,#33251e);
+    color:var(--cream);padding:30px;
+  }
+  .hero-photo strong{font-size:2rem;display:block;margin-bottom:10px}
+  section{padding:72px 0}
+  .section-head{display:flex;align-items:end;justify-content:space-between;gap:25px;margin-bottom:28px}
+  .section-head h2{font-size:2.7rem;margin:0;color:var(--brown)}
+  .section-head p{max-width:530px;color:var(--muted);line-height:1.6}
+  .rule{height:5px;background:repeating-linear-gradient(90deg,var(--rust) 0 16px,transparent 16px 25px);margin:15px 0 30px}
+  .services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .service{
+    padding:25px;background:var(--paper);border:1px solid var(--line);
+    box-shadow:6px 6px 0 rgba(59,40,30,.16)
+  }
+  .service .icon{font-size:2rem}.service h3{margin:12px 0 8px}.service p{line-height:1.55;color:var(--muted)}
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .project{
+    background:var(--paper);border:1px solid var(--line);padding:10px;box-shadow:5px 5px 0 rgba(59,40,30,.15)
+  }
+  .project img{width:100%;height:220px;object-fit:cover;display:block;background:#dfceb0}
+  .project .caption{padding:13px 6px 5px}.caption strong{display:block}.caption small{color:var(--muted)}
+  .empty{grid-column:1/-1;padding:40px;text-align:center;border:2px dashed var(--line);color:var(--muted)}
+  .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .review{background:var(--paper);border:1px solid var(--line);padding:24px;position:relative}
+  .stars{color:var(--gold);letter-spacing:3px}.review p{line-height:1.65;font-style:italic}.review b{color:var(--brown)}
+  .buy{
+    background:var(--brown);color:var(--cream);padding:45px;
+    border:4px double var(--gold)
+  }
+  .buy-grid{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}
+  .buy h2{font-size:3rem;margin:0 0 12px}.buy p{line-height:1.7;color:#e7d9bd}
+  .buy .btn{box-shadow:4px 4px 0 var(--gold);border-color:var(--gold);background:var(--cream);color:var(--brown)}
+  form{display:grid;gap:12px}
+  input,textarea,select{
+    width:100%;padding:13px;border:2px solid var(--line);background:var(--paper);
+    color:var(--ink);font:inherit
+  }
+  textarea{min-height:105px;resize:vertical}
+  footer{background:#241914;color:#d9c9ab;padding:35px 0;margin-top:20px}
+  .footer-grid{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+  .admin{background:#e9d9b9;border-top:2px dashed var(--brown)}
+  .admin-box{max-width:760px;margin:auto}
+  .admin-note{font-size:.9rem;color:var(--muted);line-height:1.5}
+  .hidden{display:none!important}
+  .notice{padding:12px;background:#e4f0d8;border-left:5px solid var(--olive);margin-top:10px}
+  @media(max-width:800px){
+    .hero-grid,.buy-grid{grid-template-columns:1fr}
+    .services,.gallery,.reviews{grid-template-columns:1fr 1fr}
+    .links{gap:10px;font-size:.8rem}
+    .hero{padding-top:50px}
+  }
+  @media(max-width:560px){
+    .services,.gallery,.reviews{grid-template-columns:1fr}
+    .section-head{display:block}.section-head p{margin-top:12px}
+    .buy{padding:28px 20px}.buy h2{font-size:2.3rem}
+    .links a:nth-child(3){display:none}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">INFRA ASSOCIATE · ROOFING · BUILDING MATERIALS · QUALITY WORK</div>
+
+<nav>
+  <div class="container navin">
+    <a class="brand" href="#home">INFRA <span>ASSOCIATE</span></a>
+    <div class="links">
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#buy">Enquire</a>
+    </div>
+  </div>
+</nav>
+
+<main id="home">
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">Est. • Your Year</span>
+        <h1>Built to<br><em>last.</em></h1>
+        <p>Roofing and building solutions with a classic, dependable touch. Explore our completed work, discover our products, and talk to Infra Associate about your next project.</p>
+        <div class="buttons">
+          <a class="btn primary" href="#projects">SEE OUR WORK →</a>
+          <a class="btn" href="#buy">GET A QUOTE</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-photo">
+          <div>
+            <strong>YOUR MAIN<br>PROJECT PHOTO</strong>
+            <span>Replace this area with your best roofing / building photo.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <div class="section-head">
+        <div><h2>What We Do</h2><div class="rule"></div></div>
+        <p>From roofing work to building blocks and related construction materials, Infra Associate helps turn plans into solid, practical spaces.</p>
+      </div>
+      <div class="services">
+        <article class="service"><div class="icon">🏠</div><h3>Roofing Solutions</h3><p>Roofing work and material solutions for residential and building projects.</p></article>
+        <article class="service"><div class="icon">🧱</div><h3>Building Blocks</h3><p>Showcase your available blocks, construction materials and product options here.</p></article>
+        <article class="service"><div class="icon">🔨</div><h3>Building Work</h3><p>Practical construction support focused on quality, durability and clean finishing.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <div class="section-head">
+        <div><h2>Our Work</h2><div class="rule"></div></div>
+        <p>Real projects make the strongest introduction. Upload your own photos from the private owner panel below.</p>
+      </div>
+      <div class="gallery" id="gallery">
+        <div class="empty" id="emptyGallery">No project photos yet.<br><b>Owner:</b> use the private upload panel at the bottom of this page.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="reviews">
+    <div class="container">
+      <div class="section-head">
+        <div><h2>Customer Notes</h2><div class="rule"></div></div>
+        <p>A small wall of good words from people who have worked with you.</p>
+      </div>
+      <div class="reviews" id="reviewsGrid">
+        <article class="review"><div class="stars">★★★★★</div><p>“Add your first customer review here.”</p><b>— Customer Name</b></article>
+        <article class="review"><div class="stars">★★★★★</div><p>“Add another genuine customer review here.”</p><b>— Customer Name</b></article>
+        <article class="review"><div class="stars">★★★★★</div><p>“Your customers' words can appear in this section.”</p><b>— Customer Name</b></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="buy">
+    <div class="container">
+      <div class="buy">
+        <div class="buy-grid">
+          <div>
+            <div class="eyebrow" style="color:var(--gold);border-color:var(--gold)">LET'S BUILD</div>
+            <h2>Ready to start?</h2>
+            <p>Use the enquiry form to ask about roofing, building blocks, materials, pricing or a project. The button can be connected to your WhatsApp number.</p>
+            <a class="btn" id="whatsappTop" href="#" target="_blank">CHAT ON WHATSAPP ↗</a>
+          </div>
+          <form id="enquiryForm">
+            <input id="name" required placeholder="Your name">
+            <input id="phone" required placeholder="Phone / WhatsApp number">
+            <select id="interest">
+              <option>Roofing</option>
+              <option>Building blocks</option>
+              <option>Building materials</option>
+              <option>Project quotation</option>
+            </select>
+            <textarea id="message" placeholder="Tell us what you need..."></textarea>
+            <button class="btn primary" type="submit">SEND ENQUIRY →</button>
+            <div id="formStatus"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="admin" id="owner">
+    <div class="container admin-box">
+      <div class="section-head">
+        <div><h2>Owner Panel</h2><div class="rule"></div></div>
+      </div>
+      <p class="admin-note"><b>Private photo upload:</b> this demo keeps the upload controls hidden until the owner enters the PIN. Photos are stored in this browser only. For a real customer website, owner-only uploads need a secure server/database login, because a static HTML file cannot provide true security.</p>
+      <div id="loginBox">
+        <input id="pin" type="password" placeholder="Owner PIN">
+        <button class="btn" onclick="ownerLogin()" style="margin-top:10px">UNLOCK OWNER PANEL</button>
+        <div id="loginStatus"></div>
+      </div>
+
+      <div id="ownerPanel" class="hidden">
+        <form id="uploadForm">
+          <input id="photoFile" type="file" accept="image/*" multiple>
+          <input id="photoTitle" placeholder="Project name / caption">
+          <button class="btn primary" type="submit">ADD PHOTOS</button>
+        </form>
+        <div class="notice">Tip: choose one or more photos, add a project caption, then press “Add Photos”.</div>
+        <br>
+        <button class="btn" onclick="clearPhotos()">DELETE ALL LOCAL PHOTOS</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <div><b>INFRA ASSOCIATE</b><br><small>Roofing & Building Solutions</small></div>
+    <div>© <span id="year"></span> Infra Associate · All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+/* =========================
+   OWNER SETTINGS
+   =========================
+   Change these before showing the site to customers.
+*/
+const OWNER_PIN = "2580"; // CHANGE THIS PIN
+const WHATSAPP_NUMBER = "91XXXXXXXXXX"; // CHANGE to your WhatsApp number, e.g. 919876543210
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+function waLink(text){
+  return "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(text);
+}
+document.getElementById("whatsappTop").href = waLink("Hello Infra Associate, I would like to enquire about your roofing/building services.");
+
+function ownerLogin(){
+  const pin = document.getElementById("pin").value;
+  const status = document.getElementById("loginStatus");
+  if(pin === OWNER_PIN){
+    document.getElementById("ownerPanel").classList.remove("hidden");
+    status.innerHTML = '<div class="notice">Owner panel unlocked on this device.</div>';
+  }else{
+    status.innerHTML = '<div style="color:#a84b2a;margin-top:10px">Incorrect PIN.</div>';
+  }
+}
+
+function getPhotos(){
+  try{return JSON.parse(localStorage.getItem("infraAssociatePhotos") || "[]")}catch(e){return []}
+}
+function savePhotos(arr){localStorage.setItem("infraAssociatePhotos", JSON.stringify(arr));}
+
+function renderGallery(){
+  const gallery = document.getElementById("gallery");
+  const photos = getPhotos();
+  gallery.innerHTML = "";
+  if(!photos.length){
+    gallery.innerHTML = '<div class="empty"><b>No project photos yet.</b><br>Owner: use the private upload panel below.</div>';
+    return;
+  }
+  photos.forEach((p,i)=>{
+    const card=document.createElement("article");
+    card.className="project";
+    card.innerHTML = '<img src="'+p.data+'" alt="'+escapeHtml(p.title || "Infra Associate project")+'"><div class="caption"><strong>'+escapeHtml(p.title || "Infra Associate Project")+'</strong><small>Infra Associate</small></div>';
+    gallery.appendChild(card);
+  });
+}
+function escapeHtml(s){
+  return String(s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));
+}
+
+document.getElementById("uploadForm").addEventListener("submit", async function(e){
+  e.preventDefault();
+  const files = [...document.getElementById("photoFile").files];
+  const title = document.getElementById("photoTitle").value.trim() || "Infra Associate Project";
+  if(!files.length){alert("Please choose at least one photo.");return;}
+  const photos=getPhotos();
+  for(const file of files){
+    const data=await new Promise((resolve,reject)=>{
+      const r=new FileReader();
+      r.onload=()=>resolve(r.result);
+      r.onerror=reject;
+      r.readAsDataURL(file);
+    });
+    photos.push({data,title});
+  }
+  savePhotos(photos);
+  renderGallery();
+  this.reset();
+  alert("Photo(s) added to this browser.");
+});
+
+function clearPhotos(){
+  if(confirm("Delete all locally saved project photos?")){
+    localStorage.removeItem("infraAssociatePhotos");
+    renderGallery();
+  }
+}
+
+document.getElementById("enquiryForm").addEventListener("submit",function(e){
+  e.preventDefault();
+  const text = `Hello Infra Associate,%0A%0AName: ${encodeURIComponent(document.getElementById("name").value)}%0APhone: ${encodeURIComponent(document.getElementById("phone").value)}%0AInterest: ${encodeURIComponent(document.getElementById("interest").value)}%0AMessage: ${encodeURIComponent(document.getElementById("message").value)}`;
+  window.open("https://wa.me/"+WHATSAPP_NUMBER+"?text="+text,"_blank");
+  document.getElementById("formStatus").innerHTML='<div class="notice">WhatsApp enquiry opened.</div>';
+});
+
+renderGallery();
+</script>
+</body>
+</html>
